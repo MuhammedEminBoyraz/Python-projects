@@ -18,3 +18,4 @@ ahmet=bankahesabi("Ahmet")
 ahmet.bakiyegösterme()
 ahmet.parayatir(28000)
 ahmet.paracek(7500)
+
