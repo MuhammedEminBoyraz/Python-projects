@@ -15,34 +15,23 @@ Ekstra:
 
 0-100 dışı → Hata
 Tekrar sorsun'''
-while True:
-    notdegeri=int(input("Lütfen almış olduğunuz notu giriniz: "))
-    if notdegeri>=90 and 100>=notdegeri:
-        print("Harf notu: AA")
-    elif 90>notdegeri and notdegeri>=80:
-        print("Harf notu: BA")
-    elif 80>notdegeri and notdegeri>=70:
-        print("Harf notu: BB")
-    elif 70>notdegeri and notdegeri>=60:
-        print("Harf notu: CB")
-    elif 60>notdegeri and notdegeri>=50:
-        print("Harf notu: CC")  
-    elif 50>notdegeri and notdegeri>=40:
-        print("Harf notu: DC")
-    elif 40>notdegeri and notdegeri>=30:
-        print("Harf notu: DD")
-    elif 30>notdegeri and notdegeri>=0:
-        print("FF")
-    else:
-        print("Geçersiz not değeri. Lütfen 0-100 arası bir değer giriniz.")                       
-    
-    while True:   
-        devammi=input("Yeni bir not değeri girmek istiyor musunuz?(E/H): ")
-        if devammi =="E":
-            print ("Devam ediliyor.")
-            break
-        elif devammi=="H":
-            print ( "Çıkış yapılıyor")
-            exit()
-        else:
-            print("Geçersiz karakter girdiniz.")
+
+notdegeri=int(input("Lütfen almış olduğunuz notu giriniz: "))
+if notdegeri>=90 and 100>=notdegeri:
+     print("Harf notu: AA")
+elif 90>notdegeri and notdegeri>=80:
+    print("Harf notu: BA")
+elif 80>notdegeri and notdegeri>=70:
+    print("Harf notu: BB")
+elif 70>notdegeri and notdegeri>=60:
+    print("Harf notu: CB")
+elif 60>notdegeri and notdegeri>=50:
+    print("Harf notu: CC")  
+elif 50>notdegeri and notdegeri>=40:
+    print("Harf notu: DC")
+elif 40>notdegeri and notdegeri>=30:
+    print("Harf notu: DD")
+elif 30>notdegeri and notdegeri>=0:
+    print("ED")
+else:
+    print("Geçersiz not değeri. Lütfen 0-100 arası bir değer giriniz.")
