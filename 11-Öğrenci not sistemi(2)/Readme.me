@@ -1,0 +1,66 @@
+# Listeler ve String İşlemleri - Öğrenci Not Sistemi
+
+## Açıklama
+Liste ve string işlemlerini öğrenmek için yapılmış öğrenci not yönetim sistemi.
+
+## Özellikler
+- Öğrenci ekleme (isim + 3 sınav notu)
+- Tüm öğrencileri listeleme
+- İsimle öğrenci arama (büyük/küçük harf duyarsız)
+- En yüksek ortalamayı bulma (birden fazla öğrenci desteği)
+- Genel ortalama hesaplama
+- Hata yönetimi (geçersiz not girişi)
+
+## Öğrenilen Konular
+
+### Listeler:
+- Liste oluşturma (`[]`)
+- `append()` ile ekleme
+- `len()` ile uzunluk
+- Index ile erişim (`ogrenciler[i]`)
+- Liste içinde liste (nested list)
+- `sum()` ile toplama
+
+### String İşlemleri:
+- `.lower()` - Küçük harfe çevirme
+- `.join()` - Liste birleştirme
+- String karşılaştırma
+- f-string formatla
+
+### Diğer:
+- İç içe döngüler
+- while ve for kullanımı
+- try-except ile hata yönetimi
+- Flag (bayrak) kullanımı
+
+## Kullanım
+```bash
+python ogrenci.py
+```
+
+## Örnek Çıktı
+```
+========================================
+ÖĞRENCİ NOT SİSTEMİ
+========================================
+1. Öğrenci ekle
+2. Tüm öğrencileri listele
+3. Öğrenci ara
+4. En yüksek ortalamayı bul
+5. Genel ortalama hesapla
+0. Çıkış
+
+Seçiminiz: 1
+Öğrenci adı: Ahmet
+1. not: 80
+2. not: 90
+3. not: 85
+✓ Öğrenci eklendi!
+```
+
+## Veri Yapısı
+```python
+ogrenciler = ["Ahmet", "Ayşe"]
+notlar = [[80, 90, 85], [85, 95, 75]]
+```
+Aynı index → Aynı öğrenci
