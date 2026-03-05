@@ -1,0 +1,112 @@
+# OOP Pratikleri
+
+Bu klasör OOP (Nesne Yönelimli Programlama) temellerini pekiştirmek için küçük pratikler içerir.
+
+---
+
+## Pratik 1: Okul ve Müdür
+
+### Konu
+Nesne içinde nesne (Composition)
+
+### Açıklama
+Bir okul var ve okulun bir müdürü var. Müdür ayrı bir sınıf, Okul ayrı bir sınıf. Müdürü okula parametre olarak göndererek atama yapıyoruz.
+
+### Öğrenilen Kavramlar
+- İki farklı sınıf oluşturma
+- Bir sınıfın nesnesini başka sınıfa parametre olarak gönderme
+- Nesne içinde nesne tutma
+- Bir nesneden başka nesnenin özelliğine erişim (okul.mudur.isim)
+
+### Kod Örneği
+```python
+class Mudur:
+    def __init__(self, isim):
+        self.isim = isim
+
+class Okul:
+    def __init__(self, okul_adi, mudur):
+        self.okul_adi = okul_adi
+        self.mudur = mudur
+
+mudur1 = Mudur("Mehmet Torunoglu")
+okul1 = Okul("Kocasinan Ahmet Eren Anadolu Lisesi", mudur1)
+print(okul1.mudur.isim)
+```
+
+---
+
+## Pratik 2: Telefon Magazasi
+
+### Konu
+Liste içinde nesneler ve başka sınıfın metodunu çağırma
+
+### Açıklama
+Bir mağaza var ve mağazanın içinde telefonlar listesi var. Her telefon ayrı bir nesne. Mağazaya telefonlar ekleniyor ve listelenirken her telefonun kendi bilgi_goster() metodu çağrılıyor.
+
+### Öğrenilen Kavramlar
+- Liste içinde nesneler tutma
+- Nesneyi listeye ekleme (append)
+- Liste içindeki nesneleri döngüyle gezme
+- Başka sınıfın metodunu çağırma (telefon.bilgi_goster())
+- Başka sınıfın özelliğine erişim
+- Aynı isimli metodlar (her sınıfın kendi bilgi_goster'ı var)
+
+### Kod Örneği
+```python
+class Telefon:
+    def __init__(self, marka, fiyat, stoksayisi):
+        self.marka = marka
+        self.fiyat = fiyat
+        self.stoksayisi = stoksayisi
+    
+    def bilgi_goster(self):
+        print(f"Marka: {self.marka} | Fiyat: {self.fiyat} | Stok sayisi: {self.stoksayisi}")
+
+class Magaza:
+    def __init__(self, isim):
+        self.isim = isim
+        self.telefonlar = []
+    
+    def telefon_ekle(self, telefon):
+        self.telefonlar.append(telefon)
+        print("Telefon magazaya eklendi.")
+    
+    def bilgi_goster(self):
+        if len(self.telefonlar) == 0:
+            print("Henuz listelenecek urun bulunmamaktadir.")
+        else:
+            print(f"Magaza adi: {self.isim.upper()}")
+            print("Magaza icindeki urunler ve urun bilgileri:")
+            for telefon in self.telefonlar:
+                telefon.bilgi_goster()
+
+telefon1 = Telefon("Samsung", 36000, 350)
+telefon2 = Telefon("Apple", 65000, 310)
+
+magaza1 = Magaza("Forum Kayseri")
+magaza1.telefon_ekle(telefon1)
+magaza1.telefon_ekle(telefon2)
+magaza1.bilgi_goster()
+```
+
+### Çıktı
+```
+Telefon magazaya eklendi.
+Telefon magazaya eklendi.
+Magaza adi: FORUM KAYSERI
+Magaza icindeki urunler ve urun bilgileri:
+Marka: Samsung | Fiyat: 36000 | Stok sayisi: 350
+Marka: Apple | Fiyat: 65000 | Stok sayisi: 310
+```
+
+---
+
+## Özet
+
+Bu pratiklerle şunları öğrendik:
+- Nesne içinde nesne tutma
+- Liste içinde nesneler tutma
+- Başka sınıfın özelliğine erişim
+- Başka sınıfın metodunu çağırma
+- Döngüyle nesneleri gezme
